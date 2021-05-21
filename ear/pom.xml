@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pt.test</groupId>
+        <artifactId>remoteear</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>ear</artifactId>
+    <packaging>ear</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <displayName>remoteear</displayName>
+                    <description>remoteear</description>
+                    <earSourceDirectory>src/main/resources</earSourceDirectory>
+                    <version>8</version>
+                    <filtering>true</filtering>
+                    <!--  generateModuleId>true</generateModuleId-->
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+
+                    <modules>
+                        <!--  ejbModule>
+                            <groupId>pt.test</groupId>
+                            <artifactId>ejbs</artifactId>
+                            <bundleFileName>ejbs.jar</bundleFileName>
+                        </ejbModule-->
+                        <webModule>
+                            <groupId>pt.test</groupId>
+                            <artifactId>webservices</artifactId>
+                            <bundleFileName>webservices.war</bundleFileName>
+                        </webModule>
+                        <!--  webModule>
+                            <groupId>pt.test</groupId>
+                            <artifactId>observers</artifactId>
+                            <bundleFileName>observers.war</bundleFileName>
+                        </webModule-->
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>pt.test</groupId>
+            <artifactId>remoteutils</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- dependency>
+            <groupId>pt.test</groupId>
+            <artifactId>ejbs</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency-->
+        <dependency>
+            <groupId>pt.test</groupId>
+            <artifactId>webservices</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <!--  dependency>
+            <groupId>pt.test</groupId>
+            <artifactId>observers</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency-->
+    </dependencies>
+
+</project>
