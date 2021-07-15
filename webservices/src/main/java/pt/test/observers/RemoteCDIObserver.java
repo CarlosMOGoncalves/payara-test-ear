@@ -1,4 +1,4 @@
-package pt.test.webservices;
+package pt.test.observers;
 
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;

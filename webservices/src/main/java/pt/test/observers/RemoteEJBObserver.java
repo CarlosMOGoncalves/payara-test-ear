@@ -1,5 +1,5 @@
 
-package pt.test.webservices;
+package pt.test.observers;
 
 import java.util.logging.Logger;
 import javax.ejb.Singleton;
