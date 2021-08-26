@@ -16,6 +16,8 @@ public class JAXRSConfiguration extends Application {
 
         // Resources
         resources.add(UserResource.class);
+        resources.add(EventResource.class);
+        resources.add(InterceptorResource.class);
 
         return resources;
     }
