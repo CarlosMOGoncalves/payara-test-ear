@@ -1,4 +1,4 @@
-package pt.test.observers;
+package pt.test.webservices;
 
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
@@ -22,7 +22,7 @@ public class EventResource {
     @POST
     @Path("sendevent")
     public Response runUpdateExchangeRate() {
-        LOGGER.info("Sent event from observers in ear");
+        LOGGER.info("Sent event from webservices in EAR");
         event.fire("Ships ahoy!");
         return Response.ok().build();
     }

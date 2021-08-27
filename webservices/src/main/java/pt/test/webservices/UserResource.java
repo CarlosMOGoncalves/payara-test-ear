@@ -3,6 +3,7 @@ package pt.test.webservices;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import javax.naming.NamingException;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -30,10 +31,11 @@ public class UserResource {
     }
 
     @GET
-    public Response testPair() {
+    public Response testPair() throws NamingException {
 
         ClientApp json = jsonbConverter.convertFromJson("{\"appName\":\"Payara\",\"appVersion\":\"5\"}", ClientApp.class);
 
         return Response.ok(json).build();
     }
+
 }
